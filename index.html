@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Commits Composer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form class="container form">
+      <p class="count"><span id="count">0</span>/50</p>
+      <div class="panel">
+        <div class="panel__command">
+          <label for="breakingChange">No retrocompatible</label>
+          <input type="checkbox" id="breakingChange" name="breakingChange" />
+        </div>
+        <div class="panel__command">
+          <label for="command">Copiar como comando</label>
+          <input type="checkbox" id="command" name="command" />
+        </div>
+        <div class="panel__command">
+          <label for="debug">Previsualizar</label>
+          <input type="checkbox" id="debug" name="debug" />
+        </div>
+        <div class="panel__command">
+          <label for="warnings">Advertencias</label>
+          <input type="checkbox" id="warnings" name="warnings" checked />
+        </div>
+      </div>
+      <select id="type" name="type">
+        <option value="chore">chore</option>
+        <option value="feat">feat</option>
+        <option value="fix">fix</option>
+        <option value="build">build</option>
+        <option value="docs">docs</option>
+        <option value="ops">ops</option>
+        <option value="perf">perf</option>
+        <option value="refactor">refactor</option>
+        <option value="style">style</option>
+        <option value="test">test</option>
+      </select>
+      <div class="scope">
+        <span>(</span>
+        <input type="text" id="scope" name="scope" placeholder="scope" />
+        <span id="colon">) :</span>
+      </div>
+      <input type="text" id="text" name="text" />
+      <p id="warning" class="hide">
+        Advertencia: El mensaje supera los 50 caracteres recomendados.
+      </p>
+      <button type="button" id="copy">Copiar</button>
+      <p id="debugCommit" class="hide"></p>
+    </form>
+
+    <footer class="footer">
+      <p>
+        Formateador para mensajes de commits basado
+        <a
+          href="https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13"
+          >en estas convenciones</a
+        >.
+      </p>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
