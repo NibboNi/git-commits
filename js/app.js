@@ -12,8 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const copyAsCommandEl = document.querySelector("#command");
   const warningsEl = document.querySelector("#warnings");
 
-  const theme = themeManager();
-  theme.init();
+  themeManager().init();
 
   let commitType = typeEl.value;
   let commitMessage = "";
