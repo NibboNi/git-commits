@@ -1,3 +1,5 @@
+import themeManager from "./themeManager.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   const inputEL = document.querySelector("#text");
   const typeEl = document.querySelector("#type");
@@ -9,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const debugCommitEl = document.querySelector("#debugCommit");
   const copyAsCommandEl = document.querySelector("#command");
   const warningsEl = document.querySelector("#warnings");
+
+  const theme = themeManager();
+  theme.init();
 
   let commitType = typeEl.value;
   let commitMessage = "";
